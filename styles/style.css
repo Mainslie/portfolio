@@ -11,9 +11,10 @@
 
 }
 
-html {
-    font-size: 36px;
+html , body {
+    font-size: 24px;
     width: 100%;
+    height: 100%;
 }
 
 button {
@@ -27,24 +28,6 @@ button {
     border-radius: 15px;
 }
 
-.blue_box {
-    background: var(--darkblue);
-    color: var(--white);
-    width: 100%;
-}
-
-.white_box {
-    background: var(--white);
-    color: var(--darkblue-);
-    width: 100%;
-}
-
-.gray_box {
-    background: var(--lightgray);
-    color: var(--darkblue);
-    width: 100%;
-}
-
 h1 {
     font-size: 3rem;
 }
@@ -54,4 +37,54 @@ h2 {
 }
 
 
+.box {
+    flex: 1;
+    height: 50vh;
+}
 
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container:nth-child(even) {
+    flex-direction: column-reverse;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        flex-direction: row-reverse;
+        width: 100vw;
+        height: 100vh;
+    }
+    .box {
+        height: 100%;
+    }
+    .container:nth-child(even) {
+        flex-direction: row-reverse;
+}
+
+/* COLOR SCHEMES */
+
+.blue_theme {
+    background: var(--darkblue);
+    color: var(--white);
+
+}
+
+.orange_theme {
+    background: var(--orange);
+    color: var(--darkblue-);
+}
+
+.white_theme {
+    background: var(--white);
+    color: var(--darkblue-);
+}
+
+.gray_theme {
+    background: var(--lightgray);
+    color: var(--darkblue);
+}
