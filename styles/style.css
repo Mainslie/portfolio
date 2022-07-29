@@ -13,19 +13,39 @@
 
 html , body {
     font-size: 24px;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
-button {
-    height: fit-content;
-    width: fit-content;
-    padding: 5px;
-    margin: 0 auto;
-    background-color: var(--orange);
-    color: var(--white);
-    font-size: 1rem;
-    border-radius: 15px;
+
+.button {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    }
+
+.button:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
 h1 {
@@ -36,12 +56,16 @@ h2 {
     font-size: 2rem;
 }
 
+.image_container {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
 
 .box {
     flex: 1;
-    height: 50vh;
+    height: 50%;
 }
-
 
 .container {
     display: flex;
@@ -50,7 +74,7 @@ h2 {
 }
 
 .container:nth-child(even) {
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 @media (min-width: 1200px) {
@@ -61,10 +85,14 @@ h2 {
     }
     .box {
         height: 100%;
+        padding: 100px;
+        height: 50vh;
     }
     .container:nth-child(even) {
-        flex-direction: row-reverse;
+        flex-direction: row;
+    }
 }
+
 
 /* COLOR SCHEMES */
 
@@ -72,11 +100,6 @@ h2 {
     background: var(--darkblue);
     color: var(--white);
 
-}
-
-.orange_theme {
-    background: var(--orange);
-    color: var(--darkblue-);
 }
 
 .white_theme {
@@ -87,4 +110,10 @@ h2 {
 .gray_theme {
     background: var(--lightgray);
     color: var(--darkblue);
+}
+
+/* ABOUT SECTION */
+
+.circle_image {
+    border-radius: 50%;
 }
